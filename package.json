@@ -12,6 +12,8 @@
   "scripts": {
     "launch": "npm run build && node dist/index.js",
     "start": "gulp serve",
+    "db:clean": "./node_modules/.bin/babel-node scripts/clean.js",
+    "start:test": "npm run db:clean && cross-env NODE_ENV=test npm run start",
     "start:debug": "cross-env DEBUG=software-engineering-daily-api:* npm run start",
     "build": "gulp",
     "lint": "esw *.js server config --color",
